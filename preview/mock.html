@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AniForge preview</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0e0f16;color:#dfe2f2;font:14px/1.4 system-ui,sans-serif;width:1600px;height:1000px;overflow:hidden}
+.top{height:52px;display:flex;align-items:center;padding:0 18px;gap:16px;border-bottom:1px solid #23263a;background:#12131d}
+.logo{font-weight:800;font-size:18px;letter-spacing:.5px}.logo b{color:#ff5d8f}
+.pill{padding:6px 12px;border-radius:99px;background:#1c1e2e;color:#9aa0c3;font-size:12px}
+.btn{margin-left:auto;background:#ff5d8f;color:#fff;border-radius:8px;padding:8px 16px;font-weight:700}
+.main{display:flex;height:948px}
+.side{width:400px;border-right:1px solid #23263a;padding:16px;display:flex;flex-direction:column;gap:12px;background:#12131d}
+.tabs{display:flex;gap:6px}.tab{padding:6px 12px;border-radius:8px;background:#1c1e2e;color:#9aa0c3;font-size:13px}.tab.on{background:#2b2f4a;color:#fff}
+h4{margin:6px 0 0;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#7d83a8}
+.box{background:#0b0c13;border:1px solid #23263a;border-radius:10px;padding:12px;font-size:13px;color:#c9cde6}
+.script{font:12px/1.65 ui-monospace,Menlo,monospace;white-space:pre;flex:1;overflow:hidden}
+.script i{color:#6f76a0;font-style:normal}.script u{color:#ff8fb1;text-decoration:none}.script em{color:#7fd6c2;font-style:normal}
+.cast{display:flex;gap:8px}.chip{display:flex;align-items:center;gap:8px;background:#1c1e2e;border-radius:10px;padding:6px 10px;font-size:12px}
+.dot{width:16px;height:16px;border-radius:50%}
+.stage{flex:1;padding:18px 22px;display:flex;flex-direction:column;gap:12px}
+canvas{width:1134px;height:638px;border-radius:10px;display:block;box-shadow:0 10px 40px #0008}
+.bar{display:flex;align-items:center;gap:12px;color:#9aa0c3;font-size:12px}
+.track{flex:1;height:6px;border-radius:9px;background:#23263a;position:relative}.track div{position:absolute;left:0;top:0;bottom:0;width:31%;background:#ff5d8f;border-radius:9px}
+.shots{display:flex;gap:6px;height:84px}
+.shot{flex:1;border-radius:8px;background:#1c1e2e;padding:8px;font-size:11px;color:#9aa0c3;border:1px solid #23263a}
+.shot.on{border-color:#ff5d8f;color:#fff}.shot b{display:block;color:#dfe2f2;font-size:11px;margin-bottom:3px}
+</style></head><body>
+<div class="top"><div class="logo">Ani<b>Forge</b></div><div class="pill">Episode 1 — "The Spell Nobody Taught Me"</div><div class="pill">23:40 · 24 fps · 1080p</div><div class="btn">Export video</div></div>
+<div class="main">
+<div class="side">
+  <div class="tabs"><div class="tab">Prompt</div><div class="tab on">Script</div><div class="tab">Cast</div><div class="tab">Style</div></div>
+  <h4>Your prompt</h4>
+  <div class="box">A cheerful mage student secretly learns forbidden magic on the academy rooftop, and her strict senpai catches her. 23 minutes.</div>
+  <h4>Cast (never goes off-model)</h4>
+  <div class="cast"><div class="chip"><div class="dot" style="background:#c93a6e"></div>Kairi</div><div class="chip"><div class="dot" style="background:#2d6f73"></div>Ren</div><div class="chip">+ add</div></div>
+  <h4>Script → auto-directed shots</h4>
+  <div class="box script"><i>@scene</i> rooftop sunset
+<i>@cast</i> Kairi, Ren
+
+<u>Ren</u> <em>(angry)</em>: Kairi! That book is
+  off limits and you know it.
+<u>Kairi</u> <em>(surprised)</em>: S-senpai?!
+<i>[fx sparkle Kairi]</i>
+<u>Kairi</u> <em>(happy, close)</em>: I'm going to
+  master every spell there is!
+<u>Ren</u> <em>(sigh)</em>: ...You never listen.
+<i>[fx magic Kairi]</i>
+<u>Kairi</u> <em>(smug)</em>: Watch this one.
+<i>[impact]</i>
+<i>@scene</i> academy hall night
+<u>Ren</u> <em>(worried)</em>: What did you do...</div>
+</div>
+<div class="stage">
+  <canvas id="c" width="1920" height="1080"></canvas>
+  <div class="bar">▶ <span>7:21 / 23:40</span><div class="track"><div></div></div><span>Shot 118 / 402</span></div>
+  <div class="shots">
+    <div class="shot"><b>116 · two-shot</b>Ren (angry) — slow push-in</div>
+    <div class="shot"><b>117 · close-up</b>Kairi (surprised) — speed lines, shake</div>
+    <div class="shot on"><b>118 · close-up</b>Kairi (happy) — sparkle, drift right</div>
+    <div class="shot"><b>119 · medium</b>Ren (sigh) — static</div>
+    <div class="shot"><b>120 · wide</b>magic circle — impact flash</div>
+    <div class="shot"><b>121 · establishing</b>academy hall, night — pan</div>
+  </div>
+</div></div>
+<script src="../js/util.js"></script>
+<script src="mock.js"></script>
+</body></html>
